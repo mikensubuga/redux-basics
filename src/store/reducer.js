@@ -29,7 +29,27 @@ const reducer = (state = initialState, action) => {
     case "STORE_RESULT":
       return {
         ...state,
-        results: state.results.concat(state.counter) //warrays are e dont use push bse arrays are obj
+        results: state.results.concat({ id: Date(), value: state.counter }) //we dont use push on arrays bse arrays are obj, so we wud still be updating it
+      };
+    case "DELETE_RESULT":
+      /* Approach 1
+    const id = 2;
+    const newArray = [...state.results]
+    newArray.splice(id,1)
+    return {
+      ...state,
+      results: newArray
+    }
+    */
+      // const updatedArray = state.results.filter(
+      //   (result, index) => index !== id
+      // );
+      const updatedArray = state.results.filter(
+        result => result.id !== action.resId
+      );
+      return {
+        ...state,
+        results: updatedArray
       };
   }
 
