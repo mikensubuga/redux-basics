@@ -24,20 +24,23 @@ export const add = value => {
   };
 };
 
-export const subtract = () => {
+export const subtract = value => {
   return {
-    type: SUBTRACT
+    type: SUBTRACT,
+    value: value
   };
 };
 
-export const storeResult = () => {
+export const storeResult = result => {
   return {
-    type: STORE_RESULT
+    type: STORE_RESULT,
+    value: result
   };
 };
 
-export const deleteResult = () => {
+export const deleteResult = id => {
   return {
-    type: DELETE_RESULT
+    type: DELETE_RESULT,
+    resId: id
   };
 };
