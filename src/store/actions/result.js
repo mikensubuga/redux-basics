@@ -1,5 +1,8 @@
 import * as actionTypes from "./actionTypes";
 export const saveResult = result => {
+  //you can put the logic here or the reducer
+  //updatedresult = result * 2
+  //or you can put it in the reducer before a new state is returned as redux suggests
   return {
     type: actionTypes.STORE_RESULT,
     value: result
